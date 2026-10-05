@@ -1,3 +1,4 @@
+```astro
 ---
 import { site } from "../data/site";
 
@@ -79,6 +80,16 @@ const navItems = [
         line-height: 1.5;
         letter-spacing: 0.22em;
         text-transform: uppercase;
+      }
+
+      /* =========================
+         ACCESSIBILITY
+      ========================= */
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 5px;
       }
 
       /* =========================
@@ -1059,6 +1070,14 @@ const navItems = [
         text-transform: uppercase;
       }
 
+      .maps-link span {
+        transition: transform 0.25s ease;
+      }
+
+      .maps-link:hover span {
+        transform: translate(3px, -3px);
+      }
+
       /* =========================
          FOOTER
       ========================= */
@@ -1187,6 +1206,11 @@ const navItems = [
           height: 76px;
         }
 
+        .brand {
+          max-width: 240px;
+          font-size: 11px;
+        }
+
         .hero-content {
           padding-bottom: 62px;
         }
@@ -1221,6 +1245,10 @@ const navItems = [
           align-items: flex-start;
           flex-direction: column;
           padding: 35px 0;
+        }
+
+        .reputation-left {
+          flex-wrap: wrap;
         }
 
         .reputation-description {
@@ -1315,9 +1343,36 @@ const navItems = [
           font-size: 14px;
         }
 
+        .contact-phone {
+          font-size: 22px;
+        }
+
         .footer-inner {
           align-items: flex-start;
           flex-direction: column;
+        }
+      }
+
+      /* =========================
+         REDUCED MOTION
+      ========================= */
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+
+        .reveal {
+          opacity: 1;
+          transform: none;
         }
       }
     </style>
@@ -1330,7 +1385,7 @@ const navItems = [
       <div class="container header-inner">
         <a href="#" class="brand">{site.brand}</a>
 
-        <nav class="nav">
+        <nav class="nav" aria-label="Navigation principale">
           {
             navItems.map((item) => (
               <a href={item.href}>{item.label}</a>
@@ -1345,7 +1400,10 @@ const navItems = [
         <button
           id="menuButton"
           class="menu-button"
+          type="button"
           aria-label="Ouvrir le menu"
+          aria-controls="mobileMenu"
+          aria-expanded="false"
         >
           ☰
         </button>
@@ -1354,20 +1412,25 @@ const navItems = [
 
     <!-- MOBILE MENU -->
 
-    <div id="mobileMenu" class="mobile-menu">
+    <div
+      id="mobileMenu"
+      class="mobile-menu"
+      aria-hidden="true"
+    >
       <div class="mobile-menu-top">
         <span class="brand">{site.brand}</span>
 
         <button
           id="closeMenu"
           class="mobile-close"
+          type="button"
           aria-label="Fermer le menu"
         >
           ×
         </button>
       </div>
 
-      <nav class="mobile-nav">
+      <nav class="mobile-nav" aria-label="Navigation mobile">
         {
           navItems.map((item) => (
             <a href={item.href} class="mobile-link">
@@ -1382,7 +1445,12 @@ const navItems = [
 
     <section class="hero">
       <div class="hero-image">
-        <img src={site.hero.image} alt="" />
+        <img
+          src={site.hero.image}
+          alt=""
+          loading="eager"
+          fetchpriority="high"
+        />
         <div class="hero-overlay"></div>
       </div>
 
@@ -1821,22 +1889,45 @@ const navItems = [
       const mobileLinks =
         document.querySelectorAll(".mobile-link");
 
-      menuButton?.addEventListener("click", () => {
+      const openMobileMenu = () => {
         mobileMenu?.classList.add("open");
+        mobileMenu?.setAttribute("aria-hidden", "false");
+        menuButton?.setAttribute("aria-expanded", "true");
         document.body.classList.add("menu-open");
-      });
+      };
 
-      closeMenu?.addEventListener("click", () => {
+      const closeMobileMenu = () => {
         mobileMenu?.classList.remove("open");
+        mobileMenu?.setAttribute("aria-hidden", "true");
+        menuButton?.setAttribute("aria-expanded", "false");
         document.body.classList.remove("menu-open");
-      });
+      };
+
+      menuButton?.addEventListener(
+        "click",
+        openMobileMenu
+      );
+
+      closeMenu?.addEventListener(
+        "click",
+        closeMobileMenu
+      );
 
       mobileLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu?.classList.remove("open");
-          document.body.classList.remove("menu-open");
-        });
+        link.addEventListener(
+          "click",
+          closeMobileMenu
+        );
       });
+
+      document.addEventListener(
+        "keydown",
+        (event) => {
+          if (event.key === "Escape") {
+            closeMobileMenu();
+          }
+        }
+      );
 
       const revealElements =
         document.querySelectorAll(".reveal");
@@ -1862,3 +1953,4 @@ const navItems = [
     </script>
   </body>
 </html>
+```
