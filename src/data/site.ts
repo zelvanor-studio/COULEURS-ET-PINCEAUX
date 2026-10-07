@@ -1,19 +1,19 @@
 export const site = {
-  brand: "COULEURS & PINCEAUX",
+  brand: "MALLET ALEXANDRE",
   city: "Toulouse",
 
   description:
-    "Peinture, rénovation et aménagement à Toulouse, avec une attention particulière portée aux finitions et au soin du travail.",
+    "Artisan peintre à Toulouse, spécialisé dans les travaux de peinture intérieure, la rénovation et les finitions soignées.",
 
   metaDescription:
-    "Couleurs & Pinceaux — Artisan peintre à Toulouse depuis 2007. Peinture, rénovation, décoration et aménagement.",
+    "Mallet Alexandre — Artisan peintre à Toulouse. Peinture intérieure, rénovation et finitions soignées.",
 
   hero: {
-    eyebrow: "Artisan peintre · Toulouse · Depuis 2007",
-    title: "Des espaces",
-    titleLine2: "pensés pour durer.",
+    eyebrow: "Artisan peintre · Toulouse",
+    title: "Des intérieurs",
+    titleLine2: "soignés jusque dans les détails.",
     image:
-      "https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=2400&q=90",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2400&q=90",
     button: {
       label: "Demander un devis",
       href: "#contact",
@@ -21,11 +21,11 @@ export const site = {
   },
 
   about: {
-    eyebrow: "Notre savoir-faire",
-    title: "Un travail soigné, du premier coup de pinceau à la dernière finition.",
+    eyebrow: "Le savoir-faire",
+    title: "Un travail précis, de la préparation à la dernière finition.",
     paragraphs: [
-      "Depuis 2007, Couleurs & Pinceaux accompagne ses clients dans leurs projets de peinture, de rénovation et d'aménagement à Toulouse et dans ses environs.",
-      "Chaque chantier est réalisé avec attention, avec une importance particulière accordée à la préparation, aux finitions et aux échanges avec le client.",
+      "Mallet Alexandre accompagne ses clients dans leurs projets de peinture et de rénovation à Toulouse et dans ses environs.",
+      "Chaque intervention est réalisée avec soin, avec une attention particulière portée à la préparation des supports, à la qualité des finitions et à la propreté du chantier.",
     ],
   },
 
@@ -33,40 +33,40 @@ export const site = {
     {
       title: "Peinture intérieure",
       description:
-        "Murs, plafonds, boiseries et pièces de vie avec une attention particulière portée aux finitions.",
+        "Murs, plafonds, boiseries et pièces de vie avec une attention particulière portée à la qualité des finitions.",
     },
     {
       title: "Rénovation",
       description:
-        "Remise en état et transformation des espaces dans le cadre de projets de rénovation.",
+        "Remise en état et transformation des espaces pour donner une nouvelle vie à votre intérieur.",
     },
     {
-      title: "Revêtements de sols",
+      title: "Préparation des supports",
       description:
-        "Des solutions adaptées aux différents espaces et aux contraintes de chaque projet.",
+        "Une préparation minutieuse des surfaces pour obtenir un résultat propre, régulier et durable.",
     },
     {
-      title: "Décoration",
+      title: "Finitions",
       description:
-        "Conseils sur les couleurs, les finitions et les choix décoratifs pour créer un intérieur cohérent.",
+        "Une attention particulière portée aux détails pour un résultat soigné jusque dans les dernières étapes du chantier.",
     },
     {
-      title: "Agencement",
+      title: "Conseils couleurs",
       description:
-        "Des travaux d'aménagement pensés pour compléter et valoriser votre intérieur.",
+        "Un accompagnement dans le choix des teintes et des finitions pour créer un intérieur cohérent avec vos envies.",
     },
     {
-      title: "Menuiserie",
+      title: "Remise en état",
       description:
-        "Des interventions complémentaires pour accompagner vos projets de rénovation et d'aménagement.",
+        "Des travaux adaptés aux besoins de chaque pièce et à l'état des surfaces existantes.",
     },
   ],
 
   experience: {
     eyebrow: "Les réalisations",
-    title: "Des finitions qui font la différence.",
+    title: "Des espaces transformés avec précision.",
     description:
-      "Chaque projet est différent. Notre travail consiste à comprendre votre besoin, préparer chaque étape avec soin et porter la même attention aux détails jusqu'à la finition.",
+      "Chaque chantier commence par une bonne préparation et se termine par une attention particulière portée aux détails. L'objectif : un résultat propre, harmonieux et durable.",
     images: [
       {
         src:
@@ -91,62 +91,44 @@ export const site = {
 
   reputation: {
     rating: "5,0/5",
-    reviewCount: "50 avis",
+    reviewCount: "10 avis",
     label: "Avis Google",
   },
 
   reasons: [
     {
       number: "01",
-      title: "Depuis 2007",
+      title: "Un travail soigné",
       description:
-        "Une expérience construite au fil des années et de nombreux projets réalisés à Toulouse.",
+        "Une attention particulière portée à la préparation, aux détails et aux finitions de chaque chantier.",
     },
     {
       number: "02",
       title: "Le sens du détail",
       description:
-        "Préparation, précision et finitions sont au cœur de chaque chantier.",
+        "Des finitions précises pour obtenir un résultat propre et harmonieux.",
     },
     {
       number: "03",
-      title: "À l'écoute du client",
+      title: "À l'écoute du projet",
       description:
-        "Des conseils adaptés au projet, aux envies et aux contraintes de chaque client.",
-    },
-  ],
-
-  reviews: [
-    {
-      quote:
-        "Le résultat est tout simplement impeccable. Le chantier a été mené avec beaucoup de professionnalisme, les finitions sont parfaites.",
-      author: "Paul",
-    },
-    {
-      quote:
-        "Un travail soigné et adapté, avec de très bons conseils. Le résultat est à la hauteur des attentes.",
-      author: "Carole",
-    },
-    {
-      quote:
-        "Peintre professionnel, minutieux et très attentif aux détails. Chantier très propre et résultat soigné.",
-      author: "Jérémie",
+        "Un accompagnement adapté aux envies, aux contraintes et aux caractéristiques de chaque intérieur.",
     },
   ],
 
   contact: {
     eyebrow: "Votre projet",
-    title: "Parlons de vos envies.",
+    title: "Parlons de votre projet.",
     description:
-      "Vous avez un projet de peinture, de rénovation ou d'aménagement à Toulouse ? Échangeons sur votre projet et vos besoins.",
-    phone: "06 76 75 25 20",
-    phoneLink: "+33676752520",
-    address: "13 Impasse Duroc",
-    city: "31200 Toulouse",
-    area: "Toulouse et Haute-Garonne",
+      "Vous avez un projet de peinture ou de rénovation à Toulouse ? Échangeons sur vos besoins et voyons ensemble comment donner vie à votre intérieur.",
+    phone: "06 06 49 80 60",
+    phoneLink: "+33606498060",
+    address: "35 Rue Pierre Bourthoumieux",
+    city: "31300 Toulouse",
+    area: "Toulouse et ses environs",
   },
 
   footer: {
-    copyright: "© 2026 Couleurs & Pinceaux",
+    copyright: "© 2026 Mallet Alexandre",
   },
 };
